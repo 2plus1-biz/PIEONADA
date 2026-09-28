@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-alabaster: #FFF8F0;
+    --color-cotton: #FFFDFC;
+    --color-dusty-rose: #8A4751;
+    --color-rose-deep: #71333D;
+    --color-soft-pink: #E8D5D5;
+    --color-charcoal: #1D1B17;
+    --color-stone: #DED9D2;
+    --color-sage: #5C604E;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #FFF8F0;
+    color: #1D1B17;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+}
+
+.font-serif-cormorant {
+  font-family: 'Cormorant Garamond', 'Noto Serif KR', Georgia, serif;
+}
+
+.font-serif-kr {
+  font-family: 'Noto Serif KR', 'Cormorant Garamond', Georgia, serif;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF8F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #DED9D2;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B8B0A5;
+}
+
+@keyframes marquee-flow {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-flow {
+  display: flex;
+  width: max-content;
+  animation: marquee-flow 45s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-flow:hover,
+.animate-marquee-flow.paused {
+  animation-play-state: paused;
+}
+
+

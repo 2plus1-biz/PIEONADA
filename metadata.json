@@ -1,0 +1,6 @@
+{
+  "name": "PIEONADA | 피어나다 플로럴 아틀리에",
+  "description": "마음을 전하는 순간, 피어나다. 서울 성수동 플로럴 아틀리에의 핸드타이드 부케와 시즌 플라워 선물.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
