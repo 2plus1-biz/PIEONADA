@@ -30,10 +30,9 @@ export const Hero: React.FC<HeroProps> = ({
 
             {/* Display Heading */}
             <FadeIn direction="up" delay={0.2} duration={0.85}>
-              <h1 className="font-serif-kr text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-light text-[#1D1B17] tracking-tight leading-[1.18] sm:leading-[1.16]">
-                마음을 전하는 순<br />
-                간, <br />
-                <span className="font-serif-cormorant italic font-normal text-[#8A4751] relative">
+              <h1 className="font-serif-kr text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-light text-[#1D1B17] tracking-tight leading-[1.2] sm:leading-[1.18] break-keep">
+                마음을 전하는 순간,<br />
+                <span className="font-serif-cormorant italic font-normal text-[#8A4751] relative inline-block mt-1 sm:mt-2">
                   피어나다.
                   <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#E8D5D5]/80 -z-10" />
                 </span>
@@ -114,23 +113,6 @@ export const Hero: React.FC<HeroProps> = ({
                 onClick={onQuickViewSignature}
                 className="group relative cursor-pointer overflow-hidden rounded-xs bg-[#FFFDFC] p-3 shadow-md hover:shadow-xl transition-all duration-500 border border-[#DED9D2]/80"
               >
-                {/* ATELIER PICK Badge */}
-                <div className="absolute top-6 right-6 z-20 w-16 h-16 rounded-full bg-[#FFFDFC]/95 backdrop-blur-xs border border-[#DED9D2] flex flex-col items-center justify-center text-center p-1 shadow-xs group-hover:scale-105 transition-transform duration-300">
-                  <span className="text-[8px] tracking-[0.18em] uppercase font-bold text-[#8A4751]">
-                    ATELIER
-                  </span>
-                  <span className="text-[8px] tracking-[0.14em] uppercase text-[#1D1B17] font-semibold -mt-0.5">
-                    PICK
-                  </span>
-                  <svg
-                    className="w-2.5 h-2.5 text-[#8A4751] mt-0.5"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                  >
-                    <path d="M12 2C13.5 6.5 17.5 10.5 22 12C17.5 13.5 13.5 17.5 12 22C10.5 17.5 6.5 13.5 2 12C6.5 10.5 10.5 6.5 12 2Z" />
-                  </svg>
-                </div>
-
                 {/* Main Bouquet Photo */}
                 <div className="relative aspect-[3/4] w-full overflow-hidden bg-[#F3EDE5]">
                   <img
