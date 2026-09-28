@@ -17,13 +17,12 @@ export const PriceGuideSection: React.FC<PriceGuideSectionProps> = ({ onSelectSi
               <span className="text-[11px] tracking-[0.2em] uppercase font-semibold text-[#8A4751] block">
                 PRICE GUIDE
               </span>
-              <h2 className="font-serif-kr text-3xl sm:text-4xl lg:text-5xl font-normal text-[#1D1B17] tracking-tight">
+              <h2 className="font-serif-kr text-3xl sm:text-4xl lg:text-5xl font-normal text-[#1D1B17] tracking-tight break-keep">
                 얼마 정도가 좋을까요?
               </h2>
             </div>
-            <p className="text-sm sm:text-base text-[#524344] max-w-md font-light leading-relaxed">
-              부담 없는 한 송이부터 특별한 기념일의 풍성한 대형 부케까지, 목적과 예산에
-              맞추어 플로리스트가 최적의 구성을 제안해 드립니다.
+            <p className="text-sm sm:text-base text-[#524344] max-w-md font-light leading-relaxed break-keep">
+              선물하는 순간과 예산에 맞춰 부담 없이 골라보세요.
             </p>
           </div>
         </FadeIn>
@@ -50,8 +49,8 @@ export const PriceGuideSection: React.FC<PriceGuideSectionProps> = ({ onSelectSi
                   <h3 className="font-serif-cormorant text-3xl font-medium text-[#1D1B17]">
                     SMALL
                   </h3>
-                  <p className="text-xs text-[#524344] font-light mt-1">
-                    가볍게 마음을 전하는 일상의 꽃
+                  <p className="text-xs text-[#524344] font-light mt-1 break-keep">
+                    가볍게 마음을 전하고 싶을 때
                   </p>
                 </div>
 
@@ -83,7 +82,7 @@ export const PriceGuideSection: React.FC<PriceGuideSectionProps> = ({ onSelectSi
                   onClick={() => onSelectSize('Small', '50,000원 이하')}
                   className="w-full py-3 text-xs font-semibold tracking-wider text-[#1D1B17] hover:text-[#8A4751] border border-[#DED9D2] hover:border-[#8A4751] rounded-xs transition-colors cursor-pointer"
                 >
-                  이 사이즈 선택하기
+                  예산에 맞는 꽃 보기
                 </button>
               </div>
             </div>
@@ -111,7 +110,7 @@ export const PriceGuideSection: React.FC<PriceGuideSectionProps> = ({ onSelectSi
                   <h3 className="font-serif-cormorant text-3xl font-medium text-[#1D1B17]">
                     MEDIUM
                   </h3>
-                  <p className="text-xs text-[#524344] font-light mt-1">
+                  <p className="text-xs text-[#524344] font-light mt-1 break-keep">
                     생일과 기념일에 가장 많이 선택하는 크기
                   </p>
                 </div>
@@ -144,7 +143,7 @@ export const PriceGuideSection: React.FC<PriceGuideSectionProps> = ({ onSelectSi
                   onClick={() => onSelectSize('Medium', '50,000 - 70,000원')}
                   className="w-full py-3 text-xs font-semibold tracking-wider text-white bg-[#8A4751] hover:bg-[#71333D] rounded-xs transition-colors shadow-xs cursor-pointer"
                 >
-                  이 사이즈 선택하기
+                  예산에 맞는 꽃 보기
                 </button>
               </div>
             </div>
@@ -167,8 +166,8 @@ export const PriceGuideSection: React.FC<PriceGuideSectionProps> = ({ onSelectSi
                   <h3 className="font-serif-cormorant text-3xl font-medium text-[#1D1B17]">
                     LARGE
                   </h3>
-                  <p className="text-xs text-[#524344] font-light mt-1">
-                    특별한 날을 위한 압도적이고 풍성한 꽃
+                  <p className="text-xs text-[#524344] font-light mt-1 break-keep">
+                    특별한 날을 조금 더 풍성하게
                   </p>
                 </div>
 
@@ -200,7 +199,7 @@ export const PriceGuideSection: React.FC<PriceGuideSectionProps> = ({ onSelectSi
                   onClick={() => onSelectSize('Large', '70,000 - 100,000원')}
                   className="w-full py-3 text-xs font-semibold tracking-wider text-[#1D1B17] hover:text-[#8A4751] border border-[#DED9D2] hover:border-[#8A4751] rounded-xs transition-colors cursor-pointer"
                 >
-                  이 사이즈 선택하기
+                  예산에 맞는 꽃 보기
                 </button>
               </div>
             </div>

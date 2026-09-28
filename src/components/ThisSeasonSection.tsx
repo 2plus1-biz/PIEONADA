@@ -25,13 +25,12 @@ export const ThisSeasonSection: React.FC<ThisSeasonSectionProps> = ({
               <span className="text-[11px] tracking-[0.2em] uppercase font-semibold text-[#8A4751] block">
                 THIS SEASON
               </span>
-              <h2 className="font-serif-kr text-3xl sm:text-4xl lg:text-5xl font-normal text-[#1D1B17] tracking-tight">
+              <h2 className="font-serif-kr text-3xl sm:text-4xl lg:text-5xl font-normal text-[#1D1B17] tracking-tight break-keep">
                 이번 계절, 가장 아름다운 꽃
               </h2>
             </div>
-            <p className="text-sm sm:text-base text-[#524344] max-w-md font-light leading-relaxed">
-              계절이 바뀌면 꽃의 얼굴도 달라집니다. 지금 이 계절에만 마주할 수 있는
-              독보적인 결의 시즌 한정 컬렉션을 만나보세요.
+            <p className="text-sm sm:text-base text-[#524344] max-w-md font-light leading-relaxed break-keep">
+              지금 가장 아름다운 계절의 꽃을 PIEONADA만의 조합으로 만나보세요.
             </p>
           </div>
         </FadeIn>
@@ -141,7 +140,7 @@ export const ThisSeasonSection: React.FC<ThisSeasonSectionProps> = ({
               onClick={onViewAllSeasonal}
               className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wider text-[#524344] hover:text-[#8A4751] transition-colors group cursor-pointer"
             >
-              <span>SEASON COLLECTION 전체 카탈로그 보기</span>
+              <span>시즌 컬렉션 보기</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>

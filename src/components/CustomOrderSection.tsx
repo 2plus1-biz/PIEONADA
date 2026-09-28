@@ -18,14 +18,14 @@ interface CustomOrderSectionProps {
 }
 
 const PURPOSES = ['생일', '기념일', '감사', '축하', '사랑', '기타'];
-const BUDGETS = ['50,000원 이하', '50,000 - 70,000원', '70,000 - 100,000원', '100,000원 이상'];
+const BUDGETS = ['5만원 이하', '5~7만원', '7~10만원', '10만원 이상'];
 const MOODS = ['화사하게', '사랑스럽게', '차분하게', '고급스럽게'];
 const COLORS = [
-  { id: 'Pink', label: 'Pink (소프트 핑크)', dot: '#F4B5BC' },
-  { id: 'White', label: 'White (화이트 & 그린)', dot: '#EAEAEA' },
-  { id: 'Peach', label: 'Peach (피치 & 코랄)', dot: '#FFCCAA' },
-  { id: 'Purple', label: 'Purple (바이올렛)', dot: '#D1B3E0' },
-  { id: 'Florist Choice', label: 'Florist Choice (플로리스트 추천)', dot: '#A9AD98' },
+  { id: 'Pink', label: 'Pink', dot: '#F4B5BC' },
+  { id: 'White', label: 'White', dot: '#EAEAEA' },
+  { id: 'Yellow', label: 'Yellow', dot: '#FFE082' },
+  { id: 'Purple', label: 'Purple', dot: '#D1B3E0' },
+  { id: '플로리스트 추천', label: '플로리스트 추천', dot: '#A9AD98' },
 ];
 
 export const CustomOrderSection: React.FC<CustomOrderSectionProps> = ({
@@ -44,12 +44,11 @@ export const CustomOrderSection: React.FC<CustomOrderSectionProps> = ({
             <span className="text-[11px] tracking-[0.2em] uppercase font-semibold text-[#8A4751] block">
               ATELIER CUSTOM ORDER
             </span>
-            <h2 className="font-serif-kr text-3xl sm:text-4xl lg:text-5xl font-normal text-[#1D1B17] tracking-tight">
+            <h2 className="font-serif-kr text-3xl sm:text-4xl lg:text-5xl font-normal text-[#1D1B17] tracking-tight break-keep">
               원하는 느낌이 있으신가요?
             </h2>
-            <p className="text-xs sm:text-sm text-[#524344] font-light max-w-xl mx-auto leading-relaxed pt-1">
-              사진 속 꽃과 똑같지 않아도 괜찮습니다. 받는 분과 전하고 싶은 마음, 원하는 분위기를
-              알려주세요. PIEONADA가 제철 꽃으로 가장 어울리는 고유한 조화를 완성해 드립니다.
+            <p className="text-xs sm:text-sm text-[#524344] font-light max-w-xl mx-auto leading-relaxed pt-1 break-keep">
+              전하고 싶은 마음과 원하는 분위기를 알려주세요. PIEONADA가 어울리는 꽃을 제안해드릴게요.
             </p>
           </div>
         </FadeIn>
@@ -58,17 +57,17 @@ export const CustomOrderSection: React.FC<CustomOrderSectionProps> = ({
         <FadeIn direction="up" delay={0.15}>
           <div className="bg-[#FFFDFC] rounded-xs border border-[#DED9D2] p-6 sm:p-10 shadow-xs space-y-8">
             {/* Step 1: Purpose */}
-            <div className="space-y-3">
-              <label className="block text-xs font-semibold tracking-wider text-[#1D1B17]">
+            <div className="space-y-3.5">
+              <label className="block text-sm font-semibold tracking-wider text-[#1D1B17]">
                 1. 선물 목적 <span className="text-[#8A4751]">*</span>
               </label>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2.5">
                 {PURPOSES.map((item) => (
                   <button
                     key={item}
                     type="button"
                     onClick={() => setOrderState((prev) => ({ ...prev, purpose: item }))}
-                    className={`px-4 py-2 text-xs font-medium rounded-xs border transition-all cursor-pointer ${
+                    className={`px-4.5 py-2.5 text-[13px] sm:text-sm font-medium rounded-xs border transition-all cursor-pointer ${
                       orderState.purpose === item
                         ? 'bg-[#8A4751] text-white border-[#8A4751] shadow-xs'
                         : 'bg-[#FFF8F0] text-[#524344] border-[#DED9D2] hover:border-[#8A4751]/50'
@@ -81,17 +80,17 @@ export const CustomOrderSection: React.FC<CustomOrderSectionProps> = ({
             </div>
 
             {/* Step 2: Budget */}
-            <div className="space-y-3">
-              <label className="block text-xs font-semibold tracking-wider text-[#1D1B17]">
+            <div className="space-y-3.5">
+              <label className="block text-sm font-semibold tracking-wider text-[#1D1B17]">
                 2. 희망 예산대 <span className="text-[#8A4751]">*</span>
               </label>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2.5">
                 {BUDGETS.map((item) => (
                   <button
                     key={item}
                     type="button"
                     onClick={() => setOrderState((prev) => ({ ...prev, budget: item }))}
-                    className={`px-4 py-2 text-xs font-medium rounded-xs border transition-all cursor-pointer ${
+                    className={`px-4.5 py-2.5 text-[13px] sm:text-sm font-medium rounded-xs border transition-all cursor-pointer ${
                       orderState.budget === item
                         ? 'bg-[#8A4751] text-white border-[#8A4751] shadow-xs'
                         : 'bg-[#FFF8F0] text-[#524344] border-[#DED9D2] hover:border-[#8A4751]/50'
@@ -104,17 +103,17 @@ export const CustomOrderSection: React.FC<CustomOrderSectionProps> = ({
             </div>
 
             {/* Step 3: Mood */}
-            <div className="space-y-3">
-              <label className="block text-xs font-semibold tracking-wider text-[#1D1B17]">
+            <div className="space-y-3.5">
+              <label className="block text-sm font-semibold tracking-wider text-[#1D1B17]">
                 3. 원하는 분위기 <span className="text-[#8A4751]">*</span>
               </label>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2.5">
                 {MOODS.map((item) => (
                   <button
                     key={item}
                     type="button"
                     onClick={() => setOrderState((prev) => ({ ...prev, mood: item }))}
-                    className={`px-4 py-2 text-xs font-medium rounded-xs border transition-all cursor-pointer ${
+                    className={`px-4.5 py-2.5 text-[13px] sm:text-sm font-medium rounded-xs border transition-all cursor-pointer ${
                       orderState.mood === item
                         ? 'bg-[#8A4751] text-white border-[#8A4751] shadow-xs'
                         : 'bg-[#FFF8F0] text-[#524344] border-[#DED9D2] hover:border-[#8A4751]/50'
@@ -127,24 +126,24 @@ export const CustomOrderSection: React.FC<CustomOrderSectionProps> = ({
             </div>
 
             {/* Step 4: Color */}
-            <div className="space-y-3">
-              <label className="block text-xs font-semibold tracking-wider text-[#1D1B17]">
+            <div className="space-y-3.5">
+              <label className="block text-sm font-semibold tracking-wider text-[#1D1B17]">
                 4. 원하는 색감 <span className="text-[#8A4751]">*</span>
               </label>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2.5">
                 {COLORS.map((item) => (
                   <button
                     key={item.id}
                     type="button"
                     onClick={() => setOrderState((prev) => ({ ...prev, color: item.id }))}
-                    className={`inline-flex items-center gap-2 px-3.5 py-2 text-xs font-medium rounded-xs border transition-all cursor-pointer ${
+                    className={`inline-flex items-center gap-2 px-4 py-2.5 text-[13px] sm:text-sm font-medium rounded-xs border transition-all cursor-pointer ${
                       orderState.color === item.id
                         ? 'bg-[#E8D5D5] text-[#1D1B17] border-[#8A4751] shadow-xs'
                         : 'bg-[#FFF8F0] text-[#524344] border-[#DED9D2] hover:border-[#8A4751]/40'
                     }`}
                   >
                     <span
-                      className="w-2.5 h-2.5 rounded-full border border-black/15 shrink-0"
+                      className="w-3 h-3 rounded-full border border-black/15 shrink-0"
                       style={{ backgroundColor: item.dot }}
                     />
                     <span>{item.label}</span>
@@ -154,34 +153,34 @@ export const CustomOrderSection: React.FC<CustomOrderSectionProps> = ({
             </div>
 
             {/* Step 5: Delivery Method */}
-            <div className="space-y-3">
-              <label className="block text-xs font-semibold tracking-wider text-[#1D1B17]">
+            <div className="space-y-3.5">
+              <label className="block text-sm font-semibold tracking-wider text-[#1D1B17]">
                 5. 수령방식 <span className="text-[#8A4751]">*</span>
               </label>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 {/* Pickup Option */}
                 <button
                   type="button"
                   onClick={() => setOrderState((prev) => ({ ...prev, deliveryMethod: 'pickup' }))}
-                  className={`p-4 rounded-xs border text-left flex items-start gap-3 transition-all cursor-pointer ${
+                  className={`p-4.5 rounded-xs border text-left flex items-start gap-3.5 transition-all cursor-pointer ${
                     orderState.deliveryMethod === 'pickup'
                       ? 'bg-[#FFF8F0] border-[#8A4751] ring-1 ring-[#8A4751]'
                       : 'bg-[#FFFDFC] border-[#DED9D2] hover:border-[#8A4751]/40'
                   }`}
                 >
                   <div
-                    className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 ${
+                    className={`w-9 h-9 rounded-full flex items-center justify-center shrink-0 ${
                       orderState.deliveryMethod === 'pickup'
                         ? 'bg-[#8A4751] text-white'
                         : 'bg-[#F3EDE5] text-[#777168]'
                     }`}
                   >
-                    <Store className="w-4 h-4" />
+                    <Store className="w-4.5 h-4.5" />
                   </div>
                   <div>
-                    <h4 className="text-xs font-semibold text-[#1D1B17]">아틀리에 매장 픽업</h4>
-                    <p className="text-[11px] text-[#777168] mt-0.5">
-                      성수동 피어나다 매장 방문 (픽업시간 지정 가능)
+                    <h4 className="text-sm font-semibold text-[#1D1B17]">매장 픽업</h4>
+                    <p className="text-xs text-[#777168] mt-1">
+                      성수동 피어나다 아틀리에 매장 방문 픽업
                     </p>
                   </div>
                 </button>
@@ -190,27 +189,27 @@ export const CustomOrderSection: React.FC<CustomOrderSectionProps> = ({
                 <button
                   type="button"
                   onClick={() => setOrderState((prev) => ({ ...prev, deliveryMethod: 'delivery' }))}
-                  className={`p-4 rounded-xs border text-left flex items-start gap-3 transition-all cursor-pointer ${
+                  className={`p-4.5 rounded-xs border text-left flex items-start gap-3.5 transition-all cursor-pointer ${
                     orderState.deliveryMethod === 'delivery'
                       ? 'bg-[#FFF8F0] border-[#8A4751] ring-1 ring-[#8A4751]'
                       : 'bg-[#FFFDFC] border-[#DED9D2] hover:border-[#8A4751]/40'
                   }`}
                 >
                   <div
-                    className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 ${
+                    className={`w-9 h-9 rounded-full flex items-center justify-center shrink-0 ${
                       orderState.deliveryMethod === 'delivery'
                         ? 'bg-[#8A4751] text-white'
                         : 'bg-[#F3EDE5] text-[#777168]'
                     }`}
                   >
-                    <Truck className="w-4 h-4" />
+                    <Truck className="w-4.5 h-4.5" />
                   </div>
                   <div>
-                    <h4 className="text-xs font-semibold text-[#1D1B17]">
-                      서울/경기 생화 전용 퀵 배송
+                    <h4 className="text-sm font-semibold text-[#1D1B17]">
+                      배송
                     </h4>
-                    <p className="text-[11px] text-[#777168] mt-0.5">
-                      시간 지정 배송 (거리별 배송비 차등)
+                    <p className="text-xs text-[#777168] mt-1">
+                      서울/경기 생화 전용 안전 배송
                     </p>
                   </div>
                 </button>
@@ -218,12 +217,12 @@ export const CustomOrderSection: React.FC<CustomOrderSectionProps> = ({
             </div>
 
             {/* Step 6: Message Card */}
-            <div className="space-y-2">
+            <div className="space-y-2.5">
               <div className="flex items-center justify-between">
-                <label className="block text-xs font-semibold tracking-wider text-[#1D1B17]">
+                <label className="block text-sm font-semibold tracking-wider text-[#1D1B17]">
                   6. 전하고 싶은 마음 (메시지 카드 작성)
                 </label>
-                <span className="text-[11px] text-[#777168] font-mono tabular-nums">
+                <span className="text-xs text-[#777168] font-mono tabular-nums">
                   {orderState.message.length}/{maxMessageLength}자
                 </span>
               </div>
@@ -235,30 +234,30 @@ export const CustomOrderSection: React.FC<CustomOrderSectionProps> = ({
                   setOrderState((prev) => ({ ...prev, message: e.target.value }))
                 }
                 placeholder="함께 전하실 편지 문구를 적어주시면, 감성적인 레터프레스 페이퍼 카드에 수기로 정성스럽게 적어 동봉해 드립니다."
-                className="w-full p-3.5 bg-[#FFF8F0] border border-[#DED9D2] focus:border-[#8A4751] focus:outline-hidden rounded-xs text-xs text-[#1D1B17] placeholder:text-[#777168]/70 leading-relaxed font-serif-kr"
+                className="w-full p-4 bg-[#FFF8F0] border border-[#DED9D2] focus:border-[#8A4751] focus:outline-hidden rounded-xs text-sm text-[#1D1B17] placeholder:text-[#777168]/70 leading-relaxed font-serif-kr"
               />
             </div>
 
             {/* Selected Order Preview Bar & Inquiry CTA */}
-            <div className="pt-4 border-t border-[#DED9D2] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-              <div className="space-y-1">
-                <span className="text-[10px] tracking-[0.16em] uppercase font-semibold text-[#8A4751] block">
+            <div className="pt-5 border-t border-[#DED9D2] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div className="space-y-1.5">
+                <span className="text-[11px] tracking-[0.16em] uppercase font-semibold text-[#8A4751] block">
                   SELECTED ORDER PREVIEW
                 </span>
-                <p className="text-xs text-[#1D1B17] font-medium">
+                <p className="text-xs sm:text-[13px] text-[#1D1B17] font-medium">
                   <span className="text-[#8A4751]">[{orderState.purpose}]</span>을 위한{' '}
                   <span className="text-[#8A4751]">{orderState.mood}</span> 분위기의{' '}
                   <span className="text-[#8A4751]">{orderState.color}</span> 꽃 (
-                  {orderState.budget} / {orderState.deliveryMethod === 'pickup' ? '매장 픽업' : '퀵 배송'})
+                  {orderState.budget} / {orderState.deliveryMethod === 'pickup' ? '매장 픽업' : '배송'})
                 </p>
               </div>
 
               <button
                 type="button"
                 onClick={onSubmitInquiry}
-                className="inline-flex items-center justify-center gap-2 bg-[#8A4751] hover:bg-[#71333D] text-white px-6 py-3 rounded-xs text-xs font-semibold tracking-wider transition-colors shadow-xs shrink-0 cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 bg-[#8A4751] hover:bg-[#71333D] text-white px-7 py-3.5 rounded-xs text-[13px] sm:text-sm font-semibold tracking-wider transition-colors shadow-xs shrink-0 cursor-pointer"
               >
-                <span>나에게 맞는 꽃 문의하기</span>
+                <span>맞춤 꽃 문의하기</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>

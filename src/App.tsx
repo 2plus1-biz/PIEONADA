@@ -44,7 +44,7 @@ export default function App() {
   // Custom Order state
   const [customOrderState, setOrderState] = useState<CustomOrderFormState>({
     purpose: '생일',
-    budget: '50,000 - 70,000원',
+    budget: '5~7만원',
     mood: '사랑스럽게',
     color: 'Pink',
     deliveryMethod: 'pickup',

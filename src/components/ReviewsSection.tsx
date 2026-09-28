@@ -6,8 +6,8 @@ import { FadeIn } from './FadeIn';
 export const ReviewsSection: React.FC = () => {
   const [isPaused, setIsPaused] = useState(false);
 
-  // Duplicate items twice to create an uninterrupted, infinite seamless flow
-  const reviewStream = [...REVIEWS, ...REVIEWS];
+  // Duplicate items to create an uninterrupted, infinite seamless flow
+  const reviewStream = [...REVIEWS, ...REVIEWS, ...REVIEWS, ...REVIEWS];
 
   return (
     <section className="py-20 lg:py-28 bg-[#FFF8F0] border-b border-[#DED9D2]/60 overflow-hidden">
@@ -16,17 +16,10 @@ export const ReviewsSection: React.FC = () => {
         <FadeIn direction="up">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12 sm:mb-16">
             <div className="space-y-3">
-              <div className="inline-flex items-center gap-2">
-                <span className="text-[11px] tracking-[0.2em] uppercase font-semibold text-[#8A4751] block">
-                  FLOWERS & MOMENTS
-                </span>
-                <span className="text-[#DED9D2]">|</span>
-                <span className="text-[11px] tracking-wider text-[#777168] flex items-center gap-1 font-light">
-                  <Sparkles className="w-3 h-3 text-[#8A4751]" />
-                  실시간 고객 생생 후기
-                </span>
-              </div>
-              <h2 className="font-serif-kr text-3xl sm:text-4xl lg:text-5xl font-normal text-[#1D1B17] tracking-tight">
+              <span className="text-[11px] tracking-[0.2em] uppercase font-semibold text-[#8A4751] block">
+                FLOWERS & MOMENTS
+              </span>
+              <h2 className="font-serif-kr text-3xl sm:text-4xl lg:text-5xl font-normal text-[#1D1B17] tracking-tight break-keep">
                 꽃과 함께한 순간들
               </h2>
             </div>

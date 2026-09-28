@@ -18,13 +18,12 @@ export const MomentsSection: React.FC<MomentsSectionProps> = ({ onSelectMoment }
               <span className="text-[11px] tracking-[0.2em] uppercase font-semibold text-[#8A4751] block">
                 FOR YOUR MOMENT
               </span>
-              <h2 className="font-serif-kr text-3xl sm:text-4xl lg:text-5xl font-normal text-[#1D1B17] tracking-tight">
+              <h2 className="font-serif-kr text-3xl sm:text-4xl lg:text-5xl font-normal text-[#1D1B17] tracking-tight break-keep">
                 어떤 마음을 전하고 싶으세요?
               </h2>
             </div>
-            <p className="text-sm sm:text-base text-[#524344] max-w-md font-light leading-relaxed">
-              특별한 날에도, 평범한 하루에도 마음에 어울리는 꽃을 골라보세요.
-              각 상황에 가장 알맞은 꽃말로 피어납니다.
+            <p className="text-sm sm:text-base text-[#524344] max-w-md font-light leading-relaxed break-keep">
+              전하고 싶은 마음에 어울리는 꽃을 제안해드릴게요.
             </p>
           </div>
         </FadeIn>

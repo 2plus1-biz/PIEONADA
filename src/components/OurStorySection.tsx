@@ -56,15 +56,8 @@ export const OurStorySection: React.FC<OurStorySectionProps> = ({ onLearnMore })
                 </div>
 
                 <div className="space-y-4 text-sm sm:text-base text-[#524344] font-light leading-relaxed">
-                  <p>
-                    PIEONADA는 단순한 꽃꽂이가 아닌 마음을 조율하는 곳입니다.
-                    이 꽃이 누구에게 닿는지, 어떤 고마움이나 그리움, 축복을 담고
-                    떠나는지 그 배경과 마음을 가장 먼저 듣습니다.
-                  </p>
-                  <p>
-                    새벽 꽃시장에서 수확 직후 가장 생생한 최상급 꽃만을 엄선하여,
-                    꽃 한 송이 한 송이의 잎결과 곡선을 온전히 살린 자연스러운
-                    프렌치 오가닉 스타일을 고수합니다.
+                  <p className="break-keep">
+                    PIEONADA는 꽃보다 먼저 전하고 싶은 마음을 생각합니다. 계절마다 가장 아름다운 꽃을 골라 그 마음에 어울리는 하나의 꽃을 만듭니다.
                   </p>
                 </div>
 
@@ -74,7 +67,7 @@ export const OurStorySection: React.FC<OurStorySectionProps> = ({ onLearnMore })
                     <div className="w-5 h-5 rounded-full bg-[#E8D5D5] flex items-center justify-center text-[#8A4751] shrink-0">
                       <Check className="w-3.5 h-3.5 stroke-[2.5]" />
                     </div>
-                    <span className="text-xs sm:text-sm text-[#1D1B17] font-medium">
+                    <span className="text-xs sm:text-sm text-[#1D1B17] font-medium break-keep">
                       매일 새벽 서울 화훼공판장 최상급 생화 공수
                     </span>
                   </div>
@@ -83,7 +76,7 @@ export const OurStorySection: React.FC<OurStorySectionProps> = ({ onLearnMore })
                     <div className="w-5 h-5 rounded-full bg-[#E8D5D5] flex items-center justify-center text-[#8A4751] shrink-0">
                       <Check className="w-3.5 h-3.5 stroke-[2.5]" />
                     </div>
-                    <span className="text-xs sm:text-sm text-[#1D1B17] font-medium">
+                    <span className="text-xs sm:text-sm text-[#1D1B17] font-medium break-keep">
                       환경을 고려한 생분해 포장재와 48시간 수분 보존 패킹
                     </span>
                   </div>
@@ -92,7 +85,7 @@ export const OurStorySection: React.FC<OurStorySectionProps> = ({ onLearnMore })
                     <div className="w-5 h-5 rounded-full bg-[#E8D5D5] flex items-center justify-center text-[#8A4751] shrink-0">
                       <Check className="w-3.5 h-3.5 stroke-[2.5]" />
                     </div>
-                    <span className="text-xs sm:text-sm text-[#1D1B17] font-medium">
+                    <span className="text-xs sm:text-sm text-[#1D1B17] font-medium break-keep">
                       받는 분의 성향에 맞춘 1:1 커스텀 컬러링 & 손글씨 카드
                     </span>
                   </div>
@@ -104,7 +97,7 @@ export const OurStorySection: React.FC<OurStorySectionProps> = ({ onLearnMore })
                     onClick={onLearnMore}
                     className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wider text-[#1D1B17] hover:text-[#8A4751] transition-colors group cursor-pointer"
                   >
-                    <span>PIEONADA STORY 더보기</span>
+                    <span>PIEONADA 이야기</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
                   </button>
                 </div>

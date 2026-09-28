@@ -22,13 +22,12 @@ export const BestFlowersSection: React.FC<BestFlowersSectionProps> = ({
               <span className="text-[11px] tracking-[0.2em] uppercase font-semibold text-[#8A4751] block">
                 BEST FLOWERS
               </span>
-              <h2 className="font-serif-kr text-3xl sm:text-4xl lg:text-5xl font-normal text-[#1D1B17] tracking-tight">
+              <h2 className="font-serif-kr text-3xl sm:text-4xl lg:text-5xl font-normal text-[#1D1B17] tracking-tight break-keep">
                 가장 사랑받는 꽃
               </h2>
             </div>
-            <p className="text-sm sm:text-base text-[#524344] max-w-md font-light leading-relaxed">
-              고민될 때 선택하기 좋은 PIEONADA의 대표 베스트 플라워입니다.
-              계절의 온도를 가장 섬세하게 담았습니다.
+            <p className="text-sm sm:text-base text-[#524344] max-w-md font-light leading-relaxed break-keep">
+              어떤 꽃을 고를지 고민된다면, 가장 많이 사랑받은 꽃부터 만나보세요.
             </p>
           </div>
         </FadeIn>

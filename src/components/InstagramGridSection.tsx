@@ -14,21 +14,26 @@ export const InstagramGridSection: React.FC = () => {
               <span className="text-[11px] tracking-[0.2em] uppercase font-semibold text-[#8A4751] block">
                 PIEONADA MOMENTS
               </span>
-              <h2 className="font-serif-kr text-3xl sm:text-4xl font-normal text-[#1D1B17] tracking-tight">
+              <h2 className="font-serif-kr text-3xl sm:text-4xl font-normal text-[#1D1B17] tracking-tight break-keep">
                 오늘 피어난 꽃
               </h2>
             </div>
 
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wider text-[#524344] hover:text-[#8A4751] transition-colors group cursor-pointer"
-            >
-              <Instagram className="w-4 h-4" />
-              <span>@pieonada FOLLOW INSTAGRAM</span>
-              <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-            </a>
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+              <span className="text-xs sm:text-sm text-[#777168] font-serif-cormorant font-medium tracking-wider">
+                @pieonada
+              </span>
+              <span className="text-[#DED9D2] hidden sm:inline">|</span>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold tracking-wider text-[#524344] hover:text-[#8A4751] transition-colors group cursor-pointer"
+              >
+                <Instagram className="w-4 h-4" />
+                <span>Instagram에서 더 보기 →</span>
+              </a>
+            </div>
           </div>
         </FadeIn>
 

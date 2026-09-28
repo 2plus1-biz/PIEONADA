@@ -41,10 +41,8 @@ export const Hero: React.FC<HeroProps> = ({
 
             {/* Lead Narrative */}
             <FadeIn direction="up" delay={0.35} duration={0.8}>
-              <p className="text-[#524344] text-base sm:text-lg leading-relaxed max-w-xl font-light">
-                말로 다 전하지 못한 마음을 가장 아름다운 계절의 꽃으로 정성스레
-                빚어 전해 드립니다. 당신의 모든 특별하고 평온한 순간 속에 피어나는
-                플로럴 아틀리에.
+              <p className="text-[#524344] text-base sm:text-lg leading-relaxed max-w-xl font-light break-keep">
+                소중한 마음이 오래 기억될 수 있도록,<br />계절의 가장 아름다운 꽃으로 정성껏 준비합니다.
               </p>
             </FadeIn>
 
@@ -75,31 +73,22 @@ export const Hero: React.FC<HeroProps> = ({
             >
               <StaggerItem direction="up">
                 <div>
-                  <span className="block font-serif-cormorant text-xl sm:text-2xl font-medium text-[#1D1B17] tracking-tight">
-                    100%
-                  </span>
-                  <span className="block text-[10px] sm:text-[11px] uppercase tracking-[0.14em] text-[#777168] mt-0.5">
-                    FRESH MORNING MARKET
+                  <span className="block font-serif-kr text-sm sm:text-base md:text-lg font-medium text-[#1D1B17] tracking-tight break-keep">
+                    정성스러운 제작
                   </span>
                 </div>
               </StaggerItem>
               <StaggerItem direction="up">
                 <div className="border-l border-[#DED9D2]/60 pl-3 sm:pl-6">
-                  <span className="block font-serif-cormorant text-xl sm:text-2xl font-medium text-[#1D1B17] tracking-tight">
-                    Hand-Tied
-                  </span>
-                  <span className="block text-[10px] sm:text-[11px] uppercase tracking-[0.14em] text-[#777168] mt-0.5">
-                    ARTISANAL BOUQUET
+                  <span className="block font-serif-kr text-sm sm:text-base md:text-lg font-medium text-[#1D1B17] tracking-tight break-keep">
+                    신선한 계절꽃
                   </span>
                 </div>
               </StaggerItem>
               <StaggerItem direction="up">
                 <div className="border-l border-[#DED9D2]/60 pl-3 sm:pl-6">
-                  <span className="block font-serif-cormorant text-xl sm:text-2xl font-medium text-[#1D1B17] tracking-tight">
-                    Same Day
-                  </span>
-                  <span className="block text-[10px] sm:text-[11px] uppercase tracking-[0.14em] text-[#777168] mt-0.5">
-                    SEOUL & GYEONGGI
+                  <span className="block font-serif-kr text-sm sm:text-base md:text-lg font-medium text-[#1D1B17] tracking-tight break-keep">
+                    당일 픽업
                   </span>
                 </div>
               </StaggerItem>
