@@ -91,6 +91,13 @@ export const Header: React.FC<HeaderProps> = ({
             <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#8A4751] transition-all duration-300 group-hover:w-full" />
           </button>
           <button
+            onClick={() => onNavigateSection('flower-class')}
+            className="hover:text-[#8A4751] transition-colors relative py-1 group"
+          >
+            Class
+            <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#8A4751] transition-all duration-300 group-hover:w-full" />
+          </button>
+          <button
             onClick={() => onNavigateSection('price-guide')}
             className="hover:text-[#8A4751] transition-colors relative py-1 group"
           >

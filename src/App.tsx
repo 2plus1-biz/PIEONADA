@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { APIProvider } from '@vis.gl/react-google-maps';
 import { Header } from './components/Header';
 import { SideNavDrawer } from './components/SideNavDrawer';
 import { Hero } from './components/Hero';
 import { MomentsSection } from './components/MomentsSection';
 import { BestFlowersSection } from './components/BestFlowersSection';
 import { OurStorySection } from './components/OurStorySection';
+import { FlowerClassSection } from './components/FlowerClassSection';
 import { ThisSeasonSection } from './components/ThisSeasonSection';
 import { PriceGuideSection } from './components/PriceGuideSection';
 import { CustomOrderSection, CustomOrderFormState } from './components/CustomOrderSection';
@@ -15,6 +17,7 @@ import { Footer } from './components/Footer';
 import { CartDrawer, CartItem } from './components/CartDrawer';
 import { ProductQuickViewModal } from './components/ProductQuickViewModal';
 import { CustomOrderModal } from './components/CustomOrderModal';
+import { FlowerClassModal } from './components/FlowerClassModal';
 import { SearchModal } from './components/SearchModal';
 import { FlowerCareModal } from './components/FlowerCareModal';
 import { CheckoutModal } from './components/CheckoutModal';
@@ -27,7 +30,15 @@ export default function App() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isCareGuideOpen, setIsCareGuideOpen] = useState(false);
   const [isCustomOrderModalOpen, setIsCustomOrderModalOpen] = useState(false);
+  const [isFlowerClassModalOpen, setIsFlowerClassModalOpen] = useState(false);
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
+  const [quotaExceeded, setQuotaExceeded] = useState(false);
+
+  useEffect(() => {
+    const handleQuotaExceeded = () => setQuotaExceeded(true);
+    window.addEventListener('gmp-quota-exceeded', handleQuotaExceeded);
+    return () => window.removeEventListener('gmp-quota-exceeded', handleQuotaExceeded);
+  }, []);
 
   // Selected product for quick view
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
@@ -132,9 +143,30 @@ export default function App() {
     handleNavigateSection('custom-order');
   };
 
+  const googleMapsApiKey = (import.meta.env.VITE_GOOGLE_MAPS_API_KEY as string) || '';
+
   return (
-    <div className="min-h-screen bg-[#FFF8F0] text-[#1D1B17] flex flex-col font-sans selection:bg-[#E8D5D5] selection:text-[#8A4751]">
-      {/* Top Header */}
+    <APIProvider apiKey={googleMapsApiKey} libraries={['marker']}>
+      <div className="min-h-screen bg-[#FFF8F0] text-[#1D1B17] flex flex-col font-sans selection:bg-[#E8D5D5] selection:text-[#8A4751]">
+        {/* Google Maps Quota Exceeded Sticky Banner */}
+        {quotaExceeded && (
+          <div className="bg-amber-50 border-b border-amber-200 text-amber-900 px-4 py-2.5 text-xs md:text-sm text-center sticky top-0 z-50 shadow-sm">
+            <span>
+              Google Maps Platform quota reached. If you are the app owner, visit{' '}
+              <a
+                href="https://developers.google.com/maps/ai/ai-studio?utm_campaign=gmp_mcp_codeassist_v1_aistudio#quota_exceeded_errors"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline font-semibold text-amber-950 hover:text-amber-800"
+              >
+                maps developer site
+              </a>{' '}
+              for instructions to update your account.
+            </span>
+          </div>
+        )}
+
+        {/* Top Header */}
       <Header
         cartCount={cartItems.reduce((acc, i) => acc + i.quantity, 0)}
         onOpenCart={() => setIsCartOpen(true)}
@@ -168,6 +200,9 @@ export default function App() {
 
         {/* Section 3: Our Story */}
         <OurStorySection onLearnMore={() => setIsCareGuideOpen(true)} />
+
+        {/* Section 3.5: Flower Class (Full-bleed cinematic video section) */}
+        <FlowerClassSection onOpenClassDetail={() => setIsFlowerClassModalOpen(true)} />
 
         {/* Section 4: This Season */}
         <ThisSeasonSection
@@ -236,6 +271,23 @@ export default function App() {
         orderState={customOrderState}
       />
 
+      {/* Flower Class Detail & Booking Modal */}
+      <FlowerClassModal
+        isOpen={isFlowerClassModalOpen}
+        onClose={() => setIsFlowerClassModalOpen(false)}
+        onOpenInquiry={(initialMessage) => {
+          setIsFlowerClassModalOpen(false);
+          if (initialMessage) {
+            setOrderState((prev) => ({
+              ...prev,
+              purpose: '클래스',
+              message: initialMessage,
+            }));
+          }
+          setIsCustomOrderModalOpen(true);
+        }}
+      />
+
       {/* Quick Search Modal */}
       <SearchModal
         isOpen={isSearchOpen}
@@ -257,5 +309,6 @@ export default function App() {
         onClearCart={() => setCartItems([])}
       />
     </div>
+    </APIProvider>
   );
 }

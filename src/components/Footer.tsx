@@ -35,7 +35,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenCareGuide }) =
               </p>
 
               <p className="text-xs text-[#c4b5b2] leading-relaxed max-w-sm font-light break-keep">
-                마음을 섬세하게 만지는 계절의 꽃과 온기 어린 핸드타이드 플라워 경험. 피어나는 플라워 아틀리에 브랜드입니다.
+                마음을 섬세하게 만지는 계절의 꽃과 온기 어린 핸드타이드 플라워 경험.
               </p>
             </div>
 

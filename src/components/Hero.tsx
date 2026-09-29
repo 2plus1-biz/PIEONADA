@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArrowRight, Heart } from 'lucide-react';
-import { heroImage } from '../data/floristData';
 import { FadeIn, ScaleIn, StaggerContainer, StaggerItem } from './FadeIn';
+import { HeroSlider } from './HeroSlider';
 
 interface HeroProps {
   onGiftClick: () => void;
@@ -16,10 +16,10 @@ export const Hero: React.FC<HeroProps> = ({
 }) => {
   return (
     <section id="hero" className="relative w-full overflow-hidden bg-[#FFF8F0] pt-6 sm:pt-10 pb-16 lg:pb-24 border-b border-[#DED9D2]/60">
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-10 xl:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-12 items-center">
           {/* Left Editorial Text Column */}
-          <div className="lg:col-span-6 xl:col-span-7 flex flex-col justify-center space-y-6 sm:space-y-8 pr-0 lg:pr-4">
+          <div className="lg:col-span-6 xl:col-span-6 flex flex-col justify-center space-y-6 sm:space-y-8 pr-0 lg:pr-2">
             {/* Tagline */}
             <FadeIn direction="down" delay={0.1} duration={0.6}>
               <div className="inline-flex items-center gap-2 text-xs sm:text-[13px] tracking-[0.16em] uppercase font-semibold text-[#8A4751]">
@@ -42,7 +42,7 @@ export const Hero: React.FC<HeroProps> = ({
             {/* Lead Narrative */}
             <FadeIn direction="up" delay={0.35} duration={0.8}>
               <p className="text-[#524344] text-base sm:text-lg leading-relaxed max-w-xl font-light break-keep">
-                소중한 마음이 오래 기억될 수 있도록,<br />계절의 가장 아름다운 꽃으로 정성껏 준비합니다.
+                전하고 싶은 마음이 오래 기억되도록, 가장 아름다운 계절의 꽃으로 준비합니다.
               </p>
             </FadeIn>
 
@@ -95,42 +95,13 @@ export const Hero: React.FC<HeroProps> = ({
             </StaggerContainer>
           </div>
 
-          {/* Right Showcase Photo Column */}
-          <div className="lg:col-span-6 xl:col-span-5 relative mt-4 lg:mt-0">
-            <ScaleIn delay={0.25} duration={0.9}>
-              <div
-                onClick={onQuickViewSignature}
-                className="group relative cursor-pointer overflow-hidden rounded-xs bg-[#FFFDFC] p-3 shadow-md hover:shadow-xl transition-all duration-500 border border-[#DED9D2]/80"
-              >
-                {/* Main Bouquet Photo */}
-                <div className="relative aspect-[3/4] w-full overflow-hidden bg-[#F3EDE5]">
-                  <img
-                    src={heroImage}
-                    alt="PIEONADA Signature Soft Blossom Hand-Tied"
-                    className="w-full h-full object-cover object-center group-hover:scale-103 transition-transform duration-700 ease-out"
-                    referrerPolicy="no-referrer"
-                  />
-
-                  {/* Subtle Gradient Scrim at Bottom */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#1D1B17]/60 via-transparent to-transparent pointer-events-none opacity-80" />
-
-                  {/* Signature Floating Tag in Bottom Right as in Image 1 */}
-                  <div className="absolute bottom-5 right-5 left-5 sm:left-auto bg-[#FFFDFC]/95 backdrop-blur-md p-4 rounded-xs border border-[#DED9D2] shadow-sm max-w-xs group-hover:border-[#8A4751]/50 transition-colors">
-                    <span className="text-[10px] tracking-[0.18em] uppercase font-semibold text-[#8A4751] block mb-1">
-                      SIGNATURE SERIES
-                    </span>
-                    <div className="flex items-baseline justify-between gap-4">
-                      <h3 className="font-serif-cormorant text-lg font-medium text-[#1D1B17]">
-                        Soft Blossom Hand-Tied
-                      </h3>
-                      <span className="font-serif-cormorant text-lg font-semibold text-[#1D1B17] tabular-nums">
-                        ₩65,000
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </ScaleIn>
+          {/* Right Showcase Photo Column - Enhanced Visual Focal Point */}
+          <div className="lg:col-span-6 xl:col-span-6 relative mt-6 lg:mt-0 flex justify-center lg:justify-end">
+            <div className="w-full max-w-[460px] sm:max-w-[500px] lg:max-w-[510px] xl:max-w-[550px]">
+              <ScaleIn delay={0.25} duration={0.9}>
+                <HeroSlider onSelectSlide={() => onQuickViewSignature()} />
+              </ScaleIn>
+            </div>
           </div>
         </div>
       </div>

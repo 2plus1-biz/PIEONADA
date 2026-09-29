@@ -1,16 +1,28 @@
 import React from 'react';
-import { ShoppingBag, Eye, Heart } from 'lucide-react';
 import { BEST_FLOWERS, Product } from '../data/floristData';
 import { FadeIn, StaggerContainer, StaggerItem } from './FadeIn';
 
 interface BestFlowersSectionProps {
   onQuickView: (product: Product) => void;
-  onAddToCart: (product: Product) => void;
+  onAddToCart?: (product: Product) => void;
 }
+
+const getTagBadgeStyle = (tag: string) => {
+  switch (tag) {
+    case 'BEST 01':
+    case 'BEST 02':
+      return 'bg-[#A75F69] text-[#FFFDFC]';
+    case 'SEASON PICK':
+      return 'bg-[#A9AD98] text-[#FFFDFC]';
+    case 'FLORIST PICK':
+      return 'bg-[#B89C82] text-[#FFFDFC]';
+    default:
+      return 'bg-[#A75F69] text-[#FFFDFC]';
+  }
+};
 
 export const BestFlowersSection: React.FC<BestFlowersSectionProps> = ({
   onQuickView,
-  onAddToCart,
 }) => {
   return (
     <section id="best-flowers" className="py-20 lg:py-28 bg-[#FFF8F0] border-b border-[#DED9D2]/60">
@@ -40,13 +52,18 @@ export const BestFlowersSection: React.FC<BestFlowersSectionProps> = ({
           {BEST_FLOWERS.map((product) => (
             <StaggerItem key={product.id} direction="up" className="h-full flex flex-col">
               <div
-                className="group flex flex-col h-full bg-[#FFFDFC] rounded-xs border border-[#DED9D2] hover:border-[#8A4751]/50 overflow-hidden shadow-xs hover:shadow-lg transition-all duration-300"
+                onClick={() => onQuickView(product)}
+                className="group flex flex-col h-full bg-[#FFFDFC] rounded-xs border border-[#DED9D2] hover:border-[#8A4751]/50 overflow-hidden shadow-xs hover:shadow-md transition-all duration-500 cursor-pointer"
               >
                 {/* Product Image Frame */}
                 <div className="relative aspect-[4/5] w-full bg-[#F3EDE5] overflow-hidden">
-                  {/* Corner Tag */}
-                  <div className="absolute top-3 left-3 z-10 bg-[#FFFDFC]/90 backdrop-blur-xs px-2.5 py-1 rounded-xs border border-[#DED9D2]/80">
-                    <span className="text-[10px] tracking-[0.14em] uppercase font-semibold text-[#1D1B17]">
+                  {/* Corner Label: 16px top/left, 30px height, centered text, micro radius */}
+                  <div
+                    className={`absolute top-4 left-4 z-10 inline-flex items-center justify-center h-[30px] px-3.5 rounded-[1px] select-none pointer-events-none transition-colors duration-300 ${getTagBadgeStyle(
+                      product.tag
+                    )}`}
+                  >
+                    <span className="text-[9.5px] tracking-[0.16em] uppercase font-semibold leading-none text-[#FFFDFC]">
                       {product.tag}
                     </span>
                   </div>
@@ -54,56 +71,54 @@ export const BestFlowersSection: React.FC<BestFlowersSectionProps> = ({
                   <img
                     src={product.image}
                     alt={product.title}
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                    className="w-full h-full object-cover object-center group-hover:scale-[1.025] transition-transform duration-700 ease-out"
                     referrerPolicy="no-referrer"
                   />
 
-                  {/* Hover Quick Action Overlay */}
-                  <div className="absolute inset-0 bg-[#1D1B17]/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3 p-4">
-                    <button
-                      onClick={() => onQuickView(product)}
-                      className="p-3 bg-[#FFFDFC] text-[#1D1B17] hover:text-[#8A4751] rounded-full shadow-md hover:scale-105 transition-all"
-                      title="상세 보기"
-                      aria-label="상세 보기"
-                    >
-                      <Eye className="w-4 h-4 stroke-[1.75]" />
-                    </button>
-                    <button
-                      onClick={() => onAddToCart(product)}
-                      className="p-3 bg-[#8A4751] hover:bg-[#71333D] text-white rounded-full shadow-md hover:scale-105 transition-all"
-                      title="장바구니 담기"
-                      aria-label="장바구니 담기"
-                    >
-                      <ShoppingBag className="w-4 h-4 stroke-[1.75]" />
-                    </button>
+                  {/* Editorial Hover Overlay: Subtle dark scrim + VIEW → */}
+                  <div className="absolute inset-0 bg-[#1D1B17]/25 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out flex items-center justify-center">
+                    <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xs bg-[#FFFDFC]/95 backdrop-blur-xs text-[#1D1B17] text-[11px] font-medium tracking-[0.2em] uppercase shadow-xs group-hover:translate-y-0 translate-y-1 transition-all duration-500 border border-[#DED9D2]/80">
+                      VIEW <span className="text-[12px] font-light leading-none">→</span>
+                    </span>
                   </div>
                 </div>
 
-                {/* Card Meta Content */}
-                <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
-                  <div className="space-y-1.5">
-                    <span className="text-[10px] tracking-[0.18em] uppercase text-[#777168] font-medium block">
+                {/* Card Meta Content: Structured Flex Column with Exact Spacing Hierarchy */}
+                <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between">
+                  <div className="flex flex-col">
+                    {/* 1. Category */}
+                    <span className="text-[10.5px] tracking-[0.18em] uppercase text-[#777168] font-medium block">
                       {product.category}
                     </span>
-                    <h3
-                      onClick={() => onQuickView(product)}
-                      className="font-serif-cormorant text-xl font-medium text-[#1D1B17] group-hover:text-[#8A4751] transition-colors cursor-pointer"
-                    >
+
+                    {/* 2. Product Name: 7~8px gap from Category */}
+                    <h3 className="mt-2 font-serif-cormorant text-[18px] sm:text-[19px] font-medium text-[#1D1B17] group-hover:text-[#8A4751] transition-colors leading-snug">
                       {product.title}
                     </h3>
-                    <p className="text-xs text-[#524344] font-light leading-relaxed line-clamp-2">
+
+                    {/* 3. Description: 13~14px gap from Product Name */}
+                    <p className="mt-3.5 text-[13.5px] text-[#524344] font-light leading-relaxed line-clamp-2">
                       {product.description}
                     </p>
+
+                    {/* 4. Mood Keywords: 7~8px gap from Description */}
+                    {product.mood && (
+                      <p className="mt-2 text-[9.5px] tracking-[0.18em] uppercase font-medium text-[#999087]">
+                        {product.mood}
+                      </p>
+                    )}
                   </div>
 
-                  {/* Price and Badge */}
-                  <div className="pt-3 border-t border-[#DED9D2]/60 flex items-baseline justify-between">
+                  {/* Price and Badge: 22~24px from Mood (mt-6), 17~18px from Divider (pt-[17px]) */}
+                  <div className="mt-6 pt-[17px] border-t border-[#DED9D2]/70 flex items-baseline justify-between">
                     <span className="font-serif-cormorant text-xl font-semibold text-[#1D1B17] tabular-nums">
                       {product.formattedPrice}
                     </span>
-                    <span className="text-[11px] text-[#777168] font-light">
-                      {product.badge}
-                    </span>
+                    {product.badge && (
+                      <span className="text-[11px] text-[#777168] font-light">
+                        {product.badge}
+                      </span>
+                    )}
                   </div>
                 </div>
               </div>

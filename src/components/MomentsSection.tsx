@@ -22,8 +22,8 @@ export const MomentsSection: React.FC<MomentsSectionProps> = ({ onSelectMoment }
                 어떤 마음을 전하고 싶으세요?
               </h2>
             </div>
-            <p className="text-sm sm:text-base text-[#524344] max-w-md font-light leading-relaxed break-keep">
-              전하고 싶은 마음에 어울리는 꽃을 제안해드릴게요.
+            <p className="text-sm sm:text-base text-[#524344] max-w-md font-light leading-relaxed break-keep md:whitespace-nowrap">
+              전하고 싶은 마음에 어울리는 꽃을 골라보세요.
             </p>
           </div>
         </FadeIn>
@@ -44,10 +44,10 @@ export const MomentsSection: React.FC<MomentsSectionProps> = ({ onSelectMoment }
                   <img
                     src={item.image}
                     alt={item.koTitle}
-                    className="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 opacity-60 group-hover:opacity-75"
+                    className="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 opacity-70 group-hover:opacity-85"
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#1D1B17]/90 via-[#1D1B17]/40 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1D1B17]/90 via-[#1D1B17]/30 to-black/20" />
                 </div>
 
                 {/* Card Top: Number and Arrow */}
@@ -61,14 +61,14 @@ export const MomentsSection: React.FC<MomentsSectionProps> = ({ onSelectMoment }
                 </div>
 
                 {/* Card Bottom: Titles and Description */}
-                <div className="relative z-10 space-y-2 text-white">
+                <div className="relative z-10 space-y-2 text-white w-full">
                   <span className="text-[10px] tracking-[0.18em] uppercase text-[#E8D5D5] block font-light">
                     {item.enTitle}
                   </span>
-                  <h3 className="font-serif-kr text-xl sm:text-2xl font-normal leading-snug group-hover:text-[#E8D5D5] transition-colors">
+                  <h3 className="font-serif-kr text-base sm:text-lg lg:text-[17px] xl:text-lg font-normal leading-snug group-hover:text-[#E8D5D5] transition-colors whitespace-nowrap">
                     {item.koTitle}
                   </h3>
-                  <p className="text-xs text-white/70 font-light leading-relaxed line-clamp-2 pt-1">
+                  <p className={`text-xs text-white/70 font-light leading-relaxed line-clamp-2 pt-1 break-keep ${item.id === 'birthday' ? 'whitespace-nowrap' : ''}`}>
                     {item.description}
                   </p>
                 </div>

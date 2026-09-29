@@ -82,6 +82,14 @@ export const SideNavDrawer: React.FC<SideNavDrawerProps> = ({
             </button>
 
             <button
+              onClick={() => handleLinkClick('flower-class')}
+              className="group flex items-center justify-between font-serif-cormorant text-2xl sm:text-3xl tracking-[0.1em] text-[#1D1B17] hover:text-[#8A4751] transition-colors py-1"
+            >
+              <span>FLOWER CLASS</span>
+              <ArrowRight className="w-5 h-5 opacity-0 -translate-x-3 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-[#8A4751]" />
+            </button>
+
+            <button
               onClick={() => {
                 onOpenCareGuide();
                 onClose();

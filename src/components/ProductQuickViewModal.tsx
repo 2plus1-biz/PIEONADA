@@ -86,7 +86,7 @@ export const ProductQuickViewModal: React.FC<ProductQuickViewModalProps> = ({
               </span>
             </div>
 
-            <p className="text-xs sm:text-sm text-[#524344] font-light leading-relaxed">
+            <p className="text-xs sm:text-sm text-[#524344] font-light leading-relaxed whitespace-pre-line">
               {product.description}
             </p>
 

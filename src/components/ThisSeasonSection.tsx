@@ -52,20 +52,20 @@ export const ThisSeasonSection: React.FC<ThisSeasonSectionProps> = ({
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1D1B17]/95 via-[#1D1B17]/35 to-transparent" />
 
-                <div className="relative z-10 space-y-4 max-w-xl text-white">
-                  <span className="inline-block text-[10px] tracking-[0.2em] uppercase font-semibold px-2.5 py-1 bg-white/20 backdrop-blur-xs rounded-xs text-white">
+                <div className="relative z-10 w-full text-white">
+                  <span className="inline-block text-[10px] tracking-[0.2em] uppercase font-semibold px-2.5 py-1 bg-white/20 backdrop-blur-xs rounded-xs text-white mb-3">
                     {mainProduct.tag}
                   </span>
 
-                  <h3 className="font-serif-kr text-2xl sm:text-3xl lg:text-4xl font-normal leading-tight text-white group-hover:text-[#E8D5D5] transition-colors">
+                  <h3 className="font-serif-cormorant text-3xl sm:text-4xl lg:text-[40px] font-normal leading-tight text-white group-hover:text-[#E8D5D5] transition-colors">
                     {mainProduct.title}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-white/80 font-light leading-relaxed line-clamp-3">
+                  <p className="text-xs sm:text-sm text-white/80 font-light leading-relaxed max-w-xl mt-3 whitespace-pre-line">
                     {mainProduct.description}
                   </p>
 
-                  <div className="flex items-center justify-between pt-2">
+                  <div className="flex items-center justify-between pt-6 sm:pt-8 w-full">
                     <span className="font-serif-cormorant text-2xl sm:text-3xl font-medium text-white tabular-nums">
                       {mainProduct.formattedPrice}
                     </span>
@@ -75,9 +75,10 @@ export const ThisSeasonSection: React.FC<ThisSeasonSectionProps> = ({
                         e.stopPropagation();
                         onSelectProduct(mainProduct);
                       }}
-                      className="inline-flex items-center gap-2 bg-[#FFFDFC] text-[#1D1B17] hover:bg-[#8A4751] hover:text-white px-5 py-2.5 text-xs font-semibold tracking-wider rounded-xs transition-colors duration-300 shadow-sm"
+                      className="inline-flex items-center gap-2 bg-[#FFFDFC] text-[#1D1B17] hover:bg-[#8A4751] hover:text-white px-5 py-2.5 text-xs font-semibold tracking-wider rounded-xs transition-colors duration-300 shadow-sm group/btn cursor-pointer"
                     >
-                      시즌 예약하기
+                      <span>시즌 예약하기</span>
+                      <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-0.5 transition-transform" />
                     </button>
                   </div>
                 </div>

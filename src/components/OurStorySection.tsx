@@ -9,7 +9,7 @@ interface OurStorySectionProps {
 
 export const OurStorySection: React.FC<OurStorySectionProps> = ({ onLearnMore }) => {
   return (
-    <section id="our-story" className="py-20 lg:py-28 bg-[#FFF8F0] border-b border-[#DED9D2]/60 overflow-hidden">
+    <section id="our-story" className="py-20 lg:py-28 bg-[#F1E8E3] border-b border-[#DED9D2]/60 overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Visual Composition */}
@@ -30,11 +30,11 @@ export const OurStorySection: React.FC<OurStorySectionProps> = ({ onLearnMore })
 
                 {/* Floating Quote Tag Box */}
                 <div className="mt-4 sm:mt-0 sm:absolute sm:-bottom-6 sm:-right-4 bg-[#FFFDFC] p-5 sm:p-6 rounded-xs border border-[#DED9D2] shadow-lg max-w-md">
-                  <blockquote className="font-serif-kr text-sm sm:text-base text-[#1D1B17] italic font-normal leading-relaxed">
-                    “자연이 주는 유일한 색과 굽이지는 줄기선의 미학”
+                  <blockquote className="font-serif-kr text-sm sm:text-base text-[#1D1B17] italic font-normal leading-relaxed break-keep">
+                    “꽃이 가장 아름답게 피어나는 순간을 담습니다.”
                   </blockquote>
                   <span className="text-[10px] tracking-[0.2em] uppercase font-semibold text-[#8A4751] block mt-2">
-                    FLORIST MINJI KIM
+                    PIEONADA FLORIST
                   </span>
                 </div>
               </div>
@@ -57,7 +57,9 @@ export const OurStorySection: React.FC<OurStorySectionProps> = ({ onLearnMore })
 
                 <div className="space-y-4 text-sm sm:text-base text-[#524344] font-light leading-relaxed">
                   <p className="break-keep">
-                    PIEONADA는 꽃보다 먼저 전하고 싶은 마음을 생각합니다. 계절마다 가장 아름다운 꽃을 골라 그 마음에 어울리는 하나의 꽃을 만듭니다.
+                    PIEONADA는 꽃보다 먼저 전하고 싶은 마음을 생각합니다.
+                    <br />
+                    계절마다 가장 아름다운 꽃을 골라 그 마음에 어울리는 하나의 꽃을 만듭니다.
                   </p>
                 </div>
 
